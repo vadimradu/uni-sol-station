@@ -23,13 +23,13 @@ int main(void)
     lcd_init(LCD_DISP_ON);
     lcd_clrscr();
     lcd_home();
-    lcd_puts("SolSt starting...")
+    lcd_puts("SolSt starting...");
     /*periphereal init*/
     
-    lcd_puts("ok.")
+    lcd_puts("ok.");
     //a delay should be inserted
     while (1) {  
     /* loop forever */
-    
+    //should create menu
     }
 }
