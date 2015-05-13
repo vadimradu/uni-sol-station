@@ -21,3 +21,6 @@ volatile uint8_t log_enable;
 volatile int16_t temperature = 0;
 //din nou oare volatile?cel putin la ultima?
 int16_t tmp;
+uint8_t button=0;
+uint8_t button_activity=0;
+
