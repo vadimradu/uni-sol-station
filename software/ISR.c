@@ -30,9 +30,22 @@ volatile uint8_t display_setpoint;			// setpoint display delay timer
 extern int16_t temperature;
 extern uint8_t log_enable;					// should we send log to RS232?
 extern pid_t pid_s;							    // pid struct
-
+extern uint8_t button=0;
+extern uint8_t button_activity=0;
 ISR(TIMER0_OVF_vect){
 	//capture button events
+	if(bit_is_clear(MINUS_BUTTON, 1)){
+		button =1;
+		button_activity=1;
+	}
+	if(bit_is_clear(PLUS_BUTTON, 1)){
+		button =2;
+		button_activity=1;
+	}
+	if(bit_is_clear(OK_BUTTON, 1)){
+		button =3;
+		button_activity=1;
+	}
 }
 
 ISR(TIMER2_OVF_vect){
