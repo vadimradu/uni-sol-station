@@ -1,4 +1,4 @@
-/* fisier: timer.c
+/* fisier: menu.c
  * 13/05/2015 vadim@onsemi
  * prototip meniu
 */
