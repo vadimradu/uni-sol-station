@@ -16,14 +16,23 @@
  *	interfata seriala si, optional, pini pentru butoane si afisaj.
 */
 
-#include <stdlib.h>
 #include <avr/io.h>
+#include <avr/interrupt.h>
+#include <avr/eeprom.h>
 #include <avr/pgmspace.h>
 #include <util/delay.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <stdio.h>
 
 #include "variables.h"
 #include "lcd_char.h"
 #include "timer.h"
+#include "usart.h"
+#include "pid.h"
+#include "spi.h"
+#include "moving_average.h"
+#include "hardware.h"
 
 
 int main(void)
