@@ -20,22 +20,23 @@
 #include <avr/io.h>
 #include <avr/pgmspace.h>
 #include <util/delay.h>
+
+#include "variables.h"
 #include "lcd_char.h"
+#include "timer.h"
 
 
 int main(void)
 {
     /*defs*/
-    
-    /* initialize display, cursor off */
-    lcd_init(LCD_DISP_ON);
-    lcd_clrscr();
-    lcd_home();
-    lcd_puts("SolSt starting...");
     /*periphereal init*/
+    /* initialize display, cursor off */
+    lcd_init(LCD_DISP_ON);    lcd_clrscr();    lcd_home();
+    /* intitialize timers, as follows: timer0-button_input/menu_display, timer1-heater pwm, timer2-temp reading */
+    TIMER0_init(); //isr takes care of menu display
+    TIMER1_init(); //pwm generator for heater
+    TIMER2_init(); //temp reading and pid
     
-    lcd_puts("ok.");
-    //a delay should be inserted
     while (1) {  
     /* loop forever */
     //should create menu
