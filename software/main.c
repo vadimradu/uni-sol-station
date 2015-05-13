@@ -69,6 +69,7 @@ int main(void)
 	lcd_puts("ok.");
 	
     while (1) {  
+    	menu();
     	usart_comm();
     }
     return 0;
